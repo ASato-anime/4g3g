@@ -19,7 +19,7 @@ mongoose.connect('mongodb+srv://admin:admin@db.z3rzz.mongodb.net/?retryWrites=tr
 
 const sessionStore = new MongoStore({
   uri: 'mongodb+srv://admin:admin@db.z3rzz.mongodb.net/?retryWrites=true&w=majority',
-  collection: 'users',
+  collection: 'session',
 });
 app.use(
   session({
@@ -35,7 +35,7 @@ app.use(
 
 app.use(express.json());
 app.use(bodyParser.json());
-// cors
+
 app.use(cors());
 app.use(express.static('public'));
 app.use(
